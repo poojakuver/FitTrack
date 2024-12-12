@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="app-bar">
+        <div class="logo">
+            <i class="fas fa-dumbbell"></i>
+            <span>FitTrack</span>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn" id="newWorkoutBtn"><i class="fas fa-plus"></i> New Workout</button>
+            <button class="nav-btn" id="pastActivityBtn"><i class="fas fa-history"></i> Past Activities</button>
+            <button class="nav-btn" id="allblogsBtn"><i class="fas fa-blog"></i> Blogs</button>
+            <button class="nav-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="workout-section">
+            <h2>Today's Workout: <span id="workoutTitle"></span></h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-fire"></i>
+                    <span>Total Calories (Workout):</span>
+                    <span id="totalWorkoutCalories">0</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-utensils"></i>
+                    <span>Total Calories (Diet):</span>
+                    <span id="totalDietCalories">0</span>
+                </div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="workout-list">
+                    <h3>Workout Plan</h3>
+                    <div id="workoutList"></div>
+                </div>
+
+                <div class="diet-list">
+                    <h3>Diet Plan</h3>
+                    <div id="dietList"></div>
+                </div>
+            </div>
+
+            <button id="saveButton" class="save-btn">
+                <i class="fas fa-save"></i> Save Progress
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

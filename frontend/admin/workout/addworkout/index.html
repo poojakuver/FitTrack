@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout & Diet Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="workoutForm" class="form-container">
+            <h1>Workout & Diet Planner</h1>
+            
+            <div class="form-section">
+                <h2>Program Details</h2>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="level">Level</label>
+                    <select id="level" required>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goal">Goal</label>
+                    <input type="text" id="goal" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input type="text" id="type" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Workout Plan</h2>
+                <div id="workoutContainer">
+                    <div class="workout-entry">
+                        <input type="text" placeholder="Exercise name" class="workout-name" required>
+                        <input type="number" placeholder="Sets" class="workout-sets" required>
+                        <input type="number" placeholder="Reps" class="workout-reps" required>
+                        <input type="number" placeholder="Calories" class="workout-calories" required>
+                        <button type="button" class="remove-btn" onclick="removeWorkout(this)">×</button>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addWorkout()">+ Add Exercise</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Diet Plan</h2>
+                <div id="dietContainer">
+                    <div class="diet-entry">
+                        <select class="diet-type" required>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Snack">Snack</option>
+                            <option value="Dinner">Dinner</option>
+                        </select>
+                        <input type="text" placeholder="Description" class="diet-description" required>
+                        <input type="number" placeholder="Calories" class="diet-calories" required>
+                        <button type="button" class="remove-btn" onclick="removeDiet(this)">×</button>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addDiet()">+ Add Meal</button>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Plan</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

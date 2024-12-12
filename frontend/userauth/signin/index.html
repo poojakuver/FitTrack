@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Gym - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dacdd02003.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-card">
+            <!-- Left Side - Image -->
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80" alt="Gym Interior">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <i class="fa-solid fa-dumbbell fa-2xl"></i>
+                        <h2>FitLife Gym</h2>
+                        <p>Welcome Back!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="form-side">
+                <div class="form-header">
+                    <h1>Sign In</h1>
+                    <p>Continue your fitness journey</p>
+                </div>
+
+                <form id="signinForm" class="signin-form">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Email address" required>
+                        </div>
+                        <span class="error-message" data-error="email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <span class="error-message" data-error="password"></span>
+                    </div>
+
+                    <button type="submit">Sign In</button>
+                </form>
+
+                <p class="signup-link">
+                    Don't have an account? <a href="../signup/index.html">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
