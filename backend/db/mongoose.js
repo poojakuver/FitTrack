@@ -76,13 +76,6 @@ const UserSchema = new mongoose.Schema({
     },
 
     currentActivity: WorkoutPlanSchema,
-
-    history: [
-        {
-            date: { type: Date, required: true }, // New field to store the date
-            activity: WorkoutPlanSchema
-        }
-    ]
 });
 
 export const Admin = mongoose.model("Admin", AdminSchema);

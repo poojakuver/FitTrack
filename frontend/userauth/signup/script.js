@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     const data = await response.json();
                     localStorage.setItem('user', data.token);
-                    window.location.href = 'userdashboard.html';
+                    window.location.href = '../../dashboard/index.html';
                 } else {
                     const error = await response.json();
                     alert(`Error: ${error.message}`);

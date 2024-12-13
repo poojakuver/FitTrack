@@ -3,6 +3,7 @@ const addWorkoutBtn = document.getElementById("addWorkoutBtn");
 const viewWorkoutBtn = document.getElementById("viewWorkoutBtn");
 const addBlogBtn = document.getElementById("addBlogBtn");
 const viewBlogBtn = document.getElementById("viewBlogBtn");
+const viewUserBtn = document.getElementById("viewUserBtn");
 
 logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('user');
@@ -23,4 +24,8 @@ addBlogBtn.addEventListener('click', () => {
 
 viewBlogBtn.addEventListener('click', () => {
     window.location.href = '../blogs/viewblogs/bloglist/index.html'
-})
+});
+
+viewUserBtn.addEventListener('click', () => {
+    window.location.href = '../users/userlist/index.html'
+});

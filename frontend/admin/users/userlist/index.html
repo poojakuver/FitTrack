@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="backButton" class="back-button">← Back</button>
+        <header>
+            <h1>User Directory</h1>
+            <p class="subtitle">Click on a user card to view veiw their complete Detail</p>
+        </header>
+        <main>
+            <div class="users-grid" id="usersContainer"></div>
+        </main>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>User ID</h2>
+                <p id="userId"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -199,4 +199,39 @@ user.get("/blog/:id", verifyUser,async (req, res) => {
     }
 });
 
+
+user.patch("/reset-done", verifyUser, async (req, res) => {
+    const userId = req.user.id; // Retrieve the user ID from the token
+
+    try {
+        // Fetch the user
+        const user = await User.findById(userId);
+
+        if (!user || !user.currentActivity) {
+            return res.status(404).json({ error: "No current activity found" });
+        }
+
+        // Reset the done fields for workouts and diets
+        user.currentActivity.workout.forEach(w => (w.done = false));
+        user.currentActivity.diet.forEach(d => (d.done = false));
+
+        // Update the lastUpdated field
+        user.currentActivity.lastUpdated = new Date();
+
+        // Save the updated user
+        await user.save();
+
+        return res.status(200).json({
+            message: "All done fields have been reset successfully",
+            currentActivity: user.currentActivity,
+        });
+    } catch (error) {
+        console.error("Error resetting done fields:", error);
+        return res.status(500).json({
+            error: "An error occurred while resetting the done fields",
+        });
+    }
+});
+
+
 export default user;

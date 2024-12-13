@@ -11,6 +11,7 @@ const totalWorkoutCalories = document.getElementById('totalWorkoutCalories');
 const totalDietCalories = document.getElementById('totalDietCalories');
 const saveButton = document.getElementById('saveButton');
 const logoutBtn = document.getElementById('logoutBtn');
+const resetBtn = document.getElementById('resetBtn')
 
 // Nav bar buttons
 const newWorkout = document.getElementById("newWorkoutBtn");
@@ -175,6 +176,33 @@ newWorkout.addEventListener("click", function () {
 allBlogs.addEventListener("click", function () {
     window.location.href = "../blogs/bloglist/index.html";
 });
+
+resetBtn.addEventListener('click', async function () {
+    try {
+
+        const token = localStorage.getItem('user');
+        // Reset the done fields by calling the reset-done endpoint
+        const resetResponse = await fetch('http://localhost:3000/user/reset-done', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`, // Assuming token is stored in localStorage
+            },
+        });
+
+        if (!resetResponse.ok) {
+            throw new Error('Failed to reset activity');
+        }
+
+        // Fetch the updated current activity
+        fetchDashboardData();
+        // You can add code here to update the UI based on the new current activity
+    } catch (error) {
+        console.error('Error:', error.message);
+        // Optionally display the error to the user
+    }
+});
+
 
 // Fetch and initialize the dashboard
 fetchDashboardData();
